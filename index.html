@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,40 +7,53 @@
     <title>Legitymacja szkolna</title>
 </head>
 <body>
+
     <header>
-        <div id="wroc-i-napis">
+        <div id="powrot">
+            <img src="strzalka.png" alt="strzala" id="strzalka">
             <p id="wroc">Wróć</p>
-            <h4>Legitymacja szkolna</h4>
         </div>
-    </header>
+        <h4>Legitymacja szkolna</h4>
+      </header>
+
     <main>
+        
         <div id="godlo-flaga">
-            <!-- tu bedzie godlo -->
-            <p>RZECZPOSPOLITA <br>
-                POSLKA
-            </p>
-            <div class="flag">
-                <div class="stripe stripe-white"></div>
-                <div class="stripe stripe-red"></div>
-              </div>
+            <div id="godlo-sekcja">
+                <img src="godlo.png" alt="Godło" id="godlo">
+                <p id="rp">RZECZPOSPOLITA <br>POLSKA</p>
+            </div>
+            <img src="flaga.gif" alt="Flaga" id="flaga">
         </div>
+
         <div id="nrlegitymacji-datawydania">
-            <p id="nrleg">Nr legitymacji: <b>0103/2023/24</b></p>
-            <p>Wydana <b>20.09.2023</b></p>
+            <label id="nrleg">
+                Nr legitymacji: <b>0103/2023/24</b>
+            </label>
+            <label>
+                Wydana <b>20.09.2023</b>
+            </label>
         </div>
+        
         <div id="legitymacja">
-            <div id="zdjecie"></div>
-            <div id="dane"></div>
-            <div id="znaczek-uczen"></div>
+            <div id="zdjecie">
+                <div>
+                    <label for="upload" class="custom-upload">Wybierz zdjęcie</label>
+                    <input type="file" id="upload" accept="image/*" style="display: none;">
+                </div>
+                <img src="" alt="Podgląd zdjęcia" id="profilowe" >
+            </div>
+            <div id="dane"><input type="text" placeholder="Podaj imie i drugie imie"></div>
+            <div id="znaczek-uczen">Uczeń</div>
             <div id="data">
                 <p>Data urodzenia:</p>
+                <input type="date">
             </div>
             <div id="pesel">
                 <p>PESEL:</p>
-                <div id="wiek"></div>
+                <div id="wiek"><input type="number" placeholder="Podaj wiek"></div>
             </div>
-            <div id="wazna">
-                <!-- zdjecie -->
+            <div id="wazna"></div>
                 <p>Ważna</p>
                 <p id="termin">Termin ważności <br>
                     30.09.2026
@@ -66,6 +79,7 @@
         <div id="pulpit-dokumenty-uslugi-kodqr-wiecej">
             
         </div>
+        <script src="legitymacja.js"></script>
     </footer>
 </body>
 </html>

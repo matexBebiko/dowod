@@ -1,39 +1,111 @@
-.flag {
-    width: 300px;
-    height: 180px;
-    position: relative;
-    overflow: hidden;
-    background-color: #ffffff;
-  }
-  
-  .stripe {
-    width: 100%;
-    height: 50%;
-    position: absolute;
-    left: 0;
-    z-index: 1;
-  }
-  
-  .stripe-white {
-    background-color: white;
-    top: 0;
-    animation: wave 3s ease-in-out infinite;
-  }
-  
-  .stripe-red {
-    background-color: red;
-    bottom: 0;
-    animation: wave 3s ease-in-out infinite reverse;
-  }
-  
-  @keyframes wave {
-    0% {
-      transform: translateX(0) skewY(0deg);
-    }
-    50% {
-      transform: translateX(-10px) skewY(5deg);
-    }
-    100% {
-      transform: translateX(0) skewY(0deg);
-    }
-  }
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url(tlo.jpeg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* header */
+
+header {
+  background-color: azure;
+  width: 100%;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  position: relative;
+  padding: 1em;
+}
+
+#powrot {
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+  position: absolute;
+  left: 1em;
+  cursor: pointer;
+}
+
+#strzalka {
+  height: 1.5em;
+}
+
+#wroc {
+  color: #077fff;
+  font-size: 1em;
+  margin: 0;
+}
+
+h4 {
+  margin: 0;
+  font-size: 1em;
+}
+
+/* glodo i flaga */
+#godlo-flaga {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  margin-top: 0.3em;
+  padding: 0 1em;
+}
+
+#godlo-sekcja {
+  display: flex;
+  align-items: center; 
+}
+
+#godlo {
+  height: 3em;
+}
+
+#rp {
+  font-size: 0.5em;
+  text-align: center;
+  white-space: nowrap;
+  color: rgb(224, 225, 226);
+}
+
+#flaga {
+  height: 2em;
+  align-self: center; 
+}
+/* ====================== */
+
+/* nrlegitymacji i data */
+#nrlegitymacji-datawydania{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1em;
+  font-size: 0.5em;
+}
+/* ====================== */
+/* legitymacja */
+#legitymacja{
+  height: 10%;
+  width: 100%;
+  background-color: rgb(36, 116, 78);
+  border-radius: 2.5em;
+  padding: 1em;
+  font-size: 0.5em;
+}
+/* ====================== */
+.custom-upload {
+  display: inline-block;
+  color: rgb(0, 0, 0);
+  border: 0.01em solid black;
+  padding: 0.1em;
+  cursor: pointer;
+  font-size: 1em;
+  text-align: center;
+}
+
