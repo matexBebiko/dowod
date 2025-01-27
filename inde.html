@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Efekt Hologramu</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .container {
+      position: relative;
+      width: 300px;
+      height: 400px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    }
+
+    .container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hologram-effect {
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(120deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0) 100%);
+      transform: skewX(-30deg);
+      animation: hologram-animation 3s infinite;
+    }
+
+    @keyframes hologram-animation {
+      0% {
+        left: -100%;
+      }
+      50% {
+        left: 100%;
+      }
+      100% {
+        left: 200%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="godlo.png" alt="Godło Polski">
+    <div class="hologram-effect"></div>
+  </div>
+  <script>
+        const hologram = document.querySelector('.hologram-effect');
+
+        window.addEventListener('deviceorientation', (event) => {
+        const x = event.beta; // Kąt nachylenia urządzenia
+        const y = event.gamma;
+
+        hologram.style.transform = `skewX(${y}deg)`;
+        });
+
+  </script>
+</body>
+</html>

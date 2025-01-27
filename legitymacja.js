@@ -13,36 +13,11 @@ uploadInput.addEventListener('change', () => {
     }
 });
 
-// Pobieranie elementów
-const godloContainer = document.querySelector('#godlo-container');
+const hologram = document.querySelector('.hologram-effect');
 
-// Dodanie listenera, który pozwala na testowanie kliknięć (jeśli wymagane)
-if (godloContainer) {
-    godloContainer.addEventListener('click', () => {
-        alert('Godło zostało kliknięte!');
-    });
-}
+window.addEventListener('deviceorientation', (event) => {
+const x = event.beta; // Kąt nachylenia urządzenia
+const y = event.gamma;
 
-// Aktualizacja czasu wyświetlanego na stronie
-const czasOkazania = document.querySelector('#czas-okazania p#data');
-if (czasOkazania) {
-    const aktualnaData = new Date();
-    const formatowanaData = aktualnaData.toLocaleString('pl-PL', {
-        year: 'numeric',
-        month: '2-digit',
-        day: '2-digit',
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit',
-    });
-    czasOkazania.textContent = formatowanaData;
-}
-
-// Funkcja dla efektów dynamicznych (jeśli potrzebne)
-function dynamicEffects() {
-    console.log('Efekty dynamiczne załadowane!');
-    // Możesz tutaj dodać dodatkowe efekty lub logikę
-}
-
-// Inicjalizacja efektów po załadowaniu strony
-window.addEventListener('DOMContentLoaded', dynamicEffects);
+hologram.style.transform = `skewX(${y}deg)`;
+});

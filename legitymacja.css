@@ -62,28 +62,43 @@ h4 {
   display: flex;
   align-items: center; 
 }
-#godlo-container {
+
+.container {
+  position: relative;
   width: 2.5em;
   height: 3em;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
 }
 
-#godlo {
+.container img {
   width: 100%;
   height: 100%;
-  z-index: 0;
+  object-fit: cover;
 }
+
 .hologram-effect {
   position: absolute;
   top: 0;
-  left: 0;
+  left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(45deg, rgba(255,255,255,0.3) 25%, rgba(0,0,0,0.2) 50%, rgba(255,255,255,0.3) 75%);
-  background-size: 200% 200%;
-  mix-blend-mode: overlay;
-  animation: 2s infinite;
-  border-radius: 50%; /* Dopasowane do kształtu godła */
-  z-index: 0;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0) 100%);
+  transform: skewX(-30deg);
+  animation: hologram-animation 3s infinite;
+}
+
+@keyframes hologram-animation {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: 200%;
+  }
 }
 
 #rp {
